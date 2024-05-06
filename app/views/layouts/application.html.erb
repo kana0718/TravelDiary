@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traveldiary</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/b046e99ada.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <% if user_signed_in? %>
+            <%= render partial: "shared/signed_in_user_header" %>
+          <% else %>
+            <%= render partial: "shared/signed_out_user_header" %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<div class="container">
+ <div class="row">
+    <div class="col-3">
+      <h1>MY PAGE</h1>
+      <div class="card shadow-lg mb-3">
+        <div class="row">
+          <div class="col">
+            <%= link_to edit_user_path do %>
+              <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
+            <% end %>
+          </div>
+          <div class="col">
+            <%= @user.name %>
+          </div>
+        </div>
+      </div>
+        <% if @user == current_user %>
+          <h1>New Memory</h1>
+            <%= form_with model: @diary do |f| %>
+          <h2>場所画像</h2>
+            <%= f.file_field :image, accept: "image/*" %>
+          <h2>場所説明</h2>
+            <%= f.text_field :description %>
+            <%= f.submit 'POST' %>
+            <% end %>
+        <% end %>
+    </div>
+  <div class="col-9">
+    <h1>Memories</h1>
+    <div class="card-columns">
+      <% @diaries.each do |diary| %>
+        <%= link_to diary_comments_path(diary.id) do %>
+          <div class="card shadow-lg">
+   　      　<%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+   　      　<div class="card-body">
+   　      　   <p class="card-text">
+     　      　   <%= diary.description %>
+   　      　   </p>
+   　      　   <% if diary.user == current_user %>
+                <%= link_to "delete", diary_path(diary), method: :delete, class: "btn btn-primary", "data-confirm" => "本当に削除しますか？" %>
+              <% end %>
+    　       </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+ </div>
+</div>

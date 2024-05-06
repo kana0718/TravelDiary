@@ -1,0 +1,17 @@
+<h1>Memories</h1>
+    <div class="card-columns">
+      <% @diaries.each do |diary| %>
+          <%= link_to diary_comments_path(diary.id) do %>
+            <div class="card shadow-lg mb-3">
+                <%= image_tag diary.user.get_profile_image(100,100), size: "48x48", class: "rounded-circle" %>
+                <%= diary.user.name %>
+            　<div class="card-body">
+   　      　     <p class="card-text">
+                  <%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+                  <%= diary.description %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>

@@ -1,0 +1,12 @@
+<h1>TravelDiary</h1>
+
+<!--プロフィール-->
+    <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
+
+    <%= @diary.user.name %>
+
+<span class="border-bottom"></span>
+
+<% @diary.each do |diary| %>
+  <%= image_tag diary.get_image(100,100) %>
+<% end %>
