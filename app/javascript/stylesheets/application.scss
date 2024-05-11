@@ -1,1 +1,34 @@
 @use '~bootstrap/scss/bootstrap';
+
+.nav-item {
+  list-style: none;
+  text-decoration: none;
+}
+
+.heading07 {
+	position: relative;
+	padding-top: 50px;
+	padding-left: 30px;
+	font-size: 26px;
+	margin-top: 100px;
+	margin-left: 70px;
+	width: 100%;
+}
+
+.heading07 span {
+	position: relative;
+	z-index: 2;
+}
+
+.heading07::before {
+	content: attr(data-en);
+	position: absolute;
+	transform: rotate(-5deg);
+	top: -20px;
+	left: 0;
+	color: rgba(224,66,114,0.6);
+	font-size: 80px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
+}

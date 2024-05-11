@@ -5,8 +5,13 @@
       <div class="card shadow-lg mb-3">
         <div class="row">
           <div class="col">
-            <%= link_to edit_user_path do %>
-              <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
+            <% if current_user.email != "guest@example.com" %>
+              <%= link_to edit_user_path(@user) do %>
+                <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
+              <% end %>
+            <% else %>
+            <% @user.id %>
+                <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
             <% end %>
           </div>
           <div class="col">

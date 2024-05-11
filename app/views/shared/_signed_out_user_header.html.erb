@@ -1,24 +1,32 @@
-<li class="nav-item">
-  <%= link_to root_path do %>
-    <i class="fa-solid fa-house"></i>
-    Top
-  <% end %>
-</li>
-<li class="nav-item">
-  <%= link_to about_home_path do %>
-    <i class="fa-solid fa-link"></i>
-    About
-  <% end %>
-</li>
-<li class="nav-item">
-  <%= link_to new_user_registration_path do %>
-    <i class="fa-solid fa-user-plus"></i>
-    Sign up
-  <% end %>
-</li>
-<li class="nav-item">
-  <%= link_to new_user_session_path do %>
-    <i class="fa-solid fa-right-to-bracket"></i>
-    Log in
-  <% end %>
-</li>
+<div class="col-3">
+  <li class="nav-item">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
+      Top
+    <% end %>
+  </li>
+</div>
+<div class="col-3">
+  <li class="nav-item">
+    <%= link_to about_home_path do %>
+      <i class="fa-solid fa-link"></i>
+      About
+    <% end %>
+  </li>
+</div>
+<div class="col-3">
+  <li class="nav-item">
+    <%= link_to new_user_registration_path do %>
+      <i class="fa-solid fa-user-plus"></i>
+      Sign up
+    <% end %>
+  </li>
+</div>
+<div class="col-3">
+  <li class="nav-item">
+    <%= link_to new_user_session_path do %>
+      <i class="fa-solid fa-right-to-bracket"></i>
+      Log in
+    <% end %>
+  </li>
+</div>
