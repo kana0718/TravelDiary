@@ -6,7 +6,7 @@ class DiariesController < ApplicationController
   def index
     @diaries = Diary.all
     @user = current_user.id
-
+    
   end
 
   def show

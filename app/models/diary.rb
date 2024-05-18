@@ -17,4 +17,18 @@ class Diary < ApplicationRecord
     end
       image.variant(resize_to_limit: [width, height]).processed
   end
+
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @diary = Diary.where("description LIKE?","#{word}")
+    elsif search == "forward_match"
+      @diary = Diary.where("description LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @diary = Diary.where("description LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @diary = Diary.where("description LIKE?","%#{word}%")
+    else
+      @diary = Diary.all
+    end
+  end
 end

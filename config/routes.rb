@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :home, only: [] do
     get :about
   end
+  get "search" => "searches#search"
   resources :favorites, only: [:index]
   resources :users, except: %i(new create)
   resources :diaries, only: %i(edit index show update new create destroy) do
