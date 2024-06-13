@@ -1,32 +1,42 @@
+<header class="page-header wrapper">
 <div class="col-3">
   <li class="nav-item">
     <%= link_to user_path(current_user.id) do %>
-      <i class="fa-solid fa-house"></i>
-      My page
+    　<h6>
+        <i class="fa-solid fa-house"></i>
+        My page
+      </h6>
     <% end %>
   </li>
 </div>
 <div class="col-3">
   <li class="nav-item">
     <%= link_to diaries_path do %>
-      <i class="fa-solid fa-users"></i>
-      List
+      <h6>
+        <i class="fa-solid fa-users"></i>
+        List
+      </h6>
     <% end %>
   </li>
 </div>
 <div class="col-3">
   <li class="nav-item">
     <%= link_to favorites_path do %>
-      <i class="fa-solid fa-book-open"></i>
-      Favorite
+      <h6>
+        <i class="fa-solid fa-book-open"></i>
+        Favorite
+      </h6>
     <% end %>
   </li>
 </div>
 <div class="col-3">
   <li class="nav-item">
     <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fa-solid fa-right-from-bracket"></i>
-      Log out
+      <h6>
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log out
+      </h6>
     <% end %>
   </li>
 </div>
+</header>

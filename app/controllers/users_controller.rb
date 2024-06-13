@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_guest_user, only: [:edit]
+
   def index
     @user = User.all
     @user = current_user.id
@@ -32,12 +33,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
-  def is_matching_login_user
-    user = User.find(params[:id])
-    unless user.id == current_user.id
-      redirect_to user_path(current_user)
-    end
-  end
 
   def ensure_guest_user
     @user = User.find(params[:id])
