@@ -3,6 +3,8 @@
 .page-header {
   display: flex;
   justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -10,11 +12,6 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 4%;
-}
-
-.nav-item {
-  list-style: none;
-  text-decoration: none;
 }
 
 
