@@ -1,15 +1,17 @@
-<% if user_signed_in? %>
-<div class="search_form">
-  <%= form_with url: search_path, local: true, method: :get do |f| %>
-      <%= f.text_field :word %>
-      <%= f.select :range, options_for_select([['User'], ['Diary']]) %>
-      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-      <%= f.submit "検索", class: "btn-sm btn-primary" %>
-  <% end %>
-  </div>
-<% end %>
-
-<h1>Memories</h1>
+<header>
+  <h1>Memories</h1>
+    <% if user_signed_in? %>
+      <div class="search_form">
+        <%= form_with url: search_path, local: true, method: :get do |f| %>
+          <%= f.text_field :word %>
+          <%= f.select :range, options_for_select([['User'], ['Diary']]) %>
+          <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+          <%= f.submit "検索", class: "btn-sm btn-primary" %>
+        <% end %>
+      </div>
+    <% end %>
+</header>
+<main>
     <div class="card-columns">
       <% @diaries.each do |diary| %>
           <%= link_to diary_comments_path(diary.id) do %>
@@ -18,7 +20,7 @@
                 <%= diary.user.name %>
             　<div class="card-body">
    　      　     <p class="card-text">
-                  <%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+                  <%= image_tag diary.get_image(200,200), size: "200x200", class: "card-img-top", style: "object-fit: cover;" %>
                   <%= diary.description %>
                 </p>
               </div>
@@ -26,3 +28,4 @@
           <% end %>
       <% end %>
     </div>
+</main>

@@ -1,15 +1,18 @@
-<h1>My Fave</h1>
-<div class="card-columns">
-  <% @diaries.each do |diary| %>
-    <div class="card shadow-lg mb-3">
-        <%= image_tag diary.user.get_profile_image(100,100), class: "rounded-circle" %>
-        <div class="card-body">
-   　      <p class="card-text">
-            <%= image_tag diary.get_image(200,200), class: "card-img-top" %>
-            <%= link_to "delete", diary_favorites_path(diary), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-          </p>
-        </div>
-    </div>
-  <% end %>
-</div>
+
+  <h1>My Fave</h1>
+<main>
+  <div class="card-columns">
+    <% @diaries.each do |diary| %>
+      <div class="card shadow-lg mb-3">
+          <%= image_tag diary.user.get_profile_image(100,100), class: "rounded-circle" %>
+          <div class="card-body">
+   　        <p class="card-text">
+              <%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+              <%= link_to "delete", diary_favorites_path(diary), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+            </p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</main>
 

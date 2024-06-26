@@ -36,7 +36,7 @@
       <% @diaries.each do |diary| %>
         <%= link_to diary_comments_path(diary.id) do %>
           <div class="card shadow-lg">
-   　      　<%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+   　      　<%= image_tag diary.get_image(200,200), size: "200x200", class: "card-img-top" %>
    　      　<div class="card-body">
    　      　   <p class="card-text">
      　      　   <%= diary.description %>
