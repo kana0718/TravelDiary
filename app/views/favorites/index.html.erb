@@ -7,7 +7,7 @@
           <%= image_tag diary.user.get_profile_image(100,100), class: "rounded-circle" %>
           <div class="card-body">
    　        <p class="card-text">
-              <%= image_tag diary.get_image(200,200), class: "card-img-top" %>
+              <%= image_tag diary.get_image(200,200), size: "200x200", class: "card-img-top" %>
               <%= link_to "delete", diary_favorites_path(diary), method: :delete, "data-confirm" => "本当に削除しますか？" %>
             </p>
           </div>

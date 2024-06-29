@@ -45,6 +45,8 @@ footer {
   height: 50px;
   margin-top: 10px;
   background-color: gray;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }
 
 .text1 {
@@ -56,4 +58,26 @@ footer {
 }
 h2 {
   font-family: 'Sacramento', cursive;
+}
+
+.emphasis_design3 span {
+  color: #4d9bc1;
+  display: inline-block;
+  transform: skewX(-15deg);
+  text-align: center;
+}
+
+.about {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+} 
+
+.about-text {
+  color: white;
 }
